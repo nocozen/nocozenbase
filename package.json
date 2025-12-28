@@ -12,8 +12,9 @@
     "tsrun": "npx tsx ./src/server.ts",
     "tw": "tsc --watch",
     "ts": "tsc",
-    "build": "npx tsup src/server.ts",
-    "start": "npx dotenvx run -f .env.production ./dist/server.js"
+    "nccdev": "ncc build src/server.ts -o dist",
+    "nccprod": "ncc build src/server.ts -o dist --no-source-map-register --no-cache --minify",
+    "build": "npx tsup src/server.ts"
   },
   "keywords": [
     "node",
